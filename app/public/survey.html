@@ -190,8 +190,9 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    ...
+                <div class="modal-body text-center">
+                    <h2 id="matchName"></h2>
+                    <img src="" id="matchImg">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -225,7 +226,10 @@
             console.log(userInput);
 
             $.post("/api/friends", userInput).then(function (data) {
-                console.log("successful post");
+                
+                $("#matchName").text(data.name);
+                $("#matchImg").attr("src", data.photo).attr("style", "max-width: 300px");
+
                 $("#matchModal").modal("show");
             });
         });

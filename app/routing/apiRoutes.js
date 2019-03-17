@@ -15,7 +15,7 @@ module.exports = function(app) {
 
         // If only one friend in arr, return that person
         var bestMatch = friends[0];
-        res.json(true);
+        res.json(bestMatch);
 
         // 
         // for (var i = 0; i < friends.length; i++) {
