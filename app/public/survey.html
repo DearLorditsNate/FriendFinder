@@ -168,7 +168,6 @@
             <button type="submit" class="btn btn-primary btn-lg btn-block mt-4" id="submit"><i class="fa fa-check-circle"
                     aria-hidden="true"></i> Submit</button>
             </form>
-
     </div>
 
     <div class="container">
@@ -206,6 +205,7 @@
         $("#submit").on("click", function () {
             event.preventDefault();
 
+            // Validate user input. Looks for all fields to have a value
             function validate() {
                 var complete = true;
                 $(".validate").each(function() {
@@ -216,6 +216,7 @@
                 return complete;
             }
 
+            // Collects user input in object
             if (validate()) {
                 var userInput = {
                     name: $("#name").val(),
@@ -236,6 +237,7 @@
 
                 console.log(userInput);
 
+                // POST user input
                 $.post("/api/friends", userInput).then(function (data) {
 
                     // Update Modal Content From Response
@@ -249,7 +251,6 @@
                 alert("Make sure all fields are filled out!");
             }
         });
-
     </script>
 </body>
 

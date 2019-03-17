@@ -29,7 +29,7 @@ module.exports = function(app) {
             scores.push(ints.reduce(sum));
         }
 
-        // Finds lowest item in array (not itself) that has lowest difference
+        // Finds item in array (not itself) that has lowest difference
         function findMatch(currentScore) {
             var result;
             var max = 50;
@@ -41,6 +41,7 @@ module.exports = function(app) {
                     result = i;
                 }
             }
+            // Returns index of best match
             return result;
         }
 
