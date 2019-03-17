@@ -8,20 +8,34 @@ module.exports = function(app) {
     app.post("/api/friends", function(req, res) {
         friends.push(req.body);
 
+        // If only one friend in arr, return that person
+        var bestMatch = friends[0];
+
+        // Stores compiled scores
+        var scores = [];
+
         // Matching logic
         function sum(total, num) {
             return total + num;
         }
 
-        // If only one friend in arr, return that person
-        var bestMatch = friends[0];
-        res.json(bestMatch);
+        // Push compiled scores to array
+        for (var i = 0; i < friends.length; i++) {
+            var ints = friends[i].scores.toString().split(',').map(function (item) {
+                return parseInt(item, 10);
+            });
 
-        // 
-        // for (var i = 0; i < friends.length; i++) {
-        //     if (Math.abs(req.body.scores.reduce(sum) - friends[i].scores.reduce(sum)) ) {
-        //         bestMatch = friends[i].scores.reduce(sum);
-        //     }
-        // }
+            scores.push(ints.reduce(sum));
+
+
+            // if (Math.abs(req.body.scores.reduce(sum) - friends[i].scores.reduce(sum)) ) {
+            //     bestMatch = friends[i].scores.reduce(sum);
+            // }
+        }
+        console.log(friends[0].scores);
+        console.log(friends);
+        console.log(scores);
+
+        res.json(bestMatch);
     });
 }
