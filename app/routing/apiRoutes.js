@@ -29,6 +29,7 @@ module.exports = function(app) {
             scores.push(ints.reduce(sum));
         }
 
+        // Finds lowest item in array (not itself) that has lowest difference
         function findMatch(currentScore) {
             var result;
             var max = 50;
@@ -43,14 +44,17 @@ module.exports = function(app) {
             return result;
         }
 
+        // Turns current score arr into integers
         var currentScore = req.body.scores.toString().split(',').map(function (item) {
             return parseInt(item, 10);
         });
 
+        // If there is more than one friend in array, run findMatch with current score as argument
         if (friends.length > 1) {
             bestMatch = friends[findMatch(currentScore.reduce(sum))];
         }
 
+        // Return best match
         res.json(bestMatch);
     });
 }
