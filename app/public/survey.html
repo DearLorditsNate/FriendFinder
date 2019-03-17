@@ -185,7 +185,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="matchModalLabel">Here's your new friend!</h5>
+                    <h3 class="modal-title" id="matchModalLabel">Here's your new friend!</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -227,9 +227,11 @@
 
             $.post("/api/friends", userInput).then(function (data) {
                 
+                // Update Modal Content From Response
                 $("#matchName").text(data.name);
                 $("#matchImg").attr("src", data.photo).attr("style", "max-width: 300px");
 
+                // Display Modal
                 $("#matchModal").modal("show");
             });
         });
