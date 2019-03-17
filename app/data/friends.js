@@ -1,7 +1,7 @@
 var friendsArr = [
     {
-        name: "Nate",
-        photo: "https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic.businessinsider.com%2Fimage%2F5484d9d1eab8ea3017b17e29%2Fimage.jpg&f=1",
+        name: "Han Solo",
+        photo: "https://screenrant.com/wp-content/uploads/young-han-solo-star-wars-movie-casting.jpg",
         scores: [
             1,
             2,
@@ -16,19 +16,19 @@ var friendsArr = [
         ]
     },
     {
-        name: "Debbie",
-        photo: "https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-hPOG3rgtdoc%2FUAcZVeeoS1I%2FAAAAAAAAA6Q%2FNwI6Ftk_OTs%2Fs1600%2Fcatpicturess%2B(11).jpg&f=1",
+        name: "Jar Jar Binks",
+        photo: "https://pbs.twimg.com/profile_images/440228605231366144/VNuY_cmB_400x400.jpeg",
         scores: [
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
-            5
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
         ]
     }
 ];
