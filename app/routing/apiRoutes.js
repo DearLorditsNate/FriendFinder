@@ -14,13 +14,14 @@ module.exports = function(app) {
         // Stores compiled scores
         var scores = [];
 
-        // Matching logic
+        // Sum function to run as callback for reduce
         function sum(total, num) {
             return total + num;
         }
 
         // Push compiled scores to array
         for (var i = 0; i < friends.length; i++) {
+            //Converts array to strings to ints to sum
             var ints = friends[i].scores.toString().split(',').map(function (item) {
                 return parseInt(item, 10);
             });
@@ -32,7 +33,19 @@ module.exports = function(app) {
             //     bestMatch = friends[i].scores.reduce(sum);
             // }
         }
-        console.log(friends[0].scores);
+
+        function findMatch() {
+            for (var i = 0; i < scores.length; i++) {
+                // If scores are equal, then return that match
+                if (Math.abs(req.body.scores.reduce(sum) - scores[i]) === 0) {
+                    bestMatch = friends[i];
+                // Else, find the lowest number difference and return that match
+                } else {
+
+                }
+            }
+        }
+
         console.log(friends);
         console.log(scores);
 
