@@ -36,10 +36,10 @@
         <hr>
         <h3>About You</h3>
             <h4>Name (Required)</h4>
-            <input type="text" id="name" class="form-control">
+            <input type="text" id="name" class="form-control validate">
 
             <h4 class="mt-4">Link to Photo Image (Required)</h4>
-            <input type="text" id="photo" class="form-control">
+            <input type="text" id="photo" class="form-control validate">
         <hr>
 
         <!-- Radio Button Questions -->
@@ -47,8 +47,8 @@
                 <!-- Question 1 -->
                 <h3>Question 1</h3>
                 <h4>You enjoy the outdoors.</h4>
-                    <select class="custom-select mb-4" id = "q1">
-                        <option selected>Select an option</option>
+                    <select class="custom-select mb-4 validate" id = "q1">
+                        <option selected disabled>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -59,8 +59,8 @@
                 <!-- Question 2 -->
                 <h3>Question 2</h3>
                 <h4>You are an anxious person.</h4>
-                    <select class="custom-select mb-4" id="q2">
-                        <option selected>Select an option</option>
+                    <select class="custom-select mb-4 validate" id="q2">
+                        <option selected disabled>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -71,8 +71,8 @@
                 <!-- Question 3 -->
                 <h3>Question 3</h3>
                 <h4>You tend to keep your cool under pressure.</h4>
-                    <select class="custom-select mb-4" id="q3">
-                        <option selected>Select an option</option>
+                    <select class="custom-select mb-4 validate" id="q3">
+                        <option selected disabled>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -83,8 +83,8 @@
                 <!-- Question 4 -->
                 <h3>Question 4</h3>
                 <h4>You are handy with mechanical things.</h4>
-                    <select class="custom-select mb-4" id="q4">
-                        <option selected>Select an option</option>
+                    <select class="custom-select mb-4 validate" id="q4">
+                        <option selected disabled>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -95,8 +95,8 @@
                 <!-- Question 5 -->
                 <h3>Question 5</h3>
                 <h4>You consider yourself a lucky person.</h4>
-                    <select class="custom-select mb-4" id="q5">
-                        <option selected>Select an option</option>
+                    <select class="custom-select mb-4 validate" id="q5">
+                        <option selected disabled>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -107,8 +107,8 @@
                 <!-- Question 6 -->
                 <h3>Question 6</h3>
                 <h4>You like to prioritize your own wellness.</h4>
-                    <select class="custom-select mb-4" id="q6">
-                        <option selected>Select an option</option>
+                    <select class="custom-select mb-4 validate" id="q6">
+                        <option selected disabled>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -119,8 +119,8 @@
                 <!-- Question 7 -->
                 <h3>Question 7</h3>
                 <h4>You feel an obligation to help those around you.</h4>
-                    <select class="custom-select mb-4" id="q7">
-                        <option selected>Select an option</option>
+                    <select class="custom-select mb-4 validate" id="q7">
+                        <option selected disabled>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -131,8 +131,8 @@
                 <!-- Question 8 -->
                 <h3>Question 8</h3>
                 <h4>You enjoy travelling.</h4>
-                    <select class="custom-select mb-4" id="q8">
-                        <option selected>Select an option</option>
+                    <select class="custom-select mb-4 validate" id="q8">
+                        <option selected disabled>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -143,8 +143,8 @@
                 <!-- Question 9 -->
                 <h3>Question 9</h3>
                 <h4>You trust your gut.</h4>
-                    <select class="custom-select mb-4" id="q9">
-                        <option selected>Select an option</option>
+                    <select class="custom-select mb-4 validate" id="q9">
+                        <option selected disabled>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -155,8 +155,8 @@
                 <!-- Question 10 -->
                 <h3>Question 10</h3>
                 <h4>You are always learning.</h4>
-                    <select class="custom-select mb-4" id="q10">
-                        <option selected>Select an option</option>
+                    <select class="custom-select mb-4 validate" id="q10">
+                        <option selected disabled>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -206,34 +206,48 @@
         $("#submit").on("click", function () {
             event.preventDefault();
 
-            var userInput = {
-                name: $("#name").val(),
-                photo: $("#photo").val(),
-                scores: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val()
-                ]
-            };
+            function validate() {
+                var complete = true;
+                $(".validate").each(function() {
+                    if (!$(this).val()) {
+                        complete = false;
+                    }
+                });
+                return complete;
+            }
 
-            console.log(userInput);
+            if (validate()) {
+                var userInput = {
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
+                    ]
+                };
 
-            $.post("/api/friends", userInput).then(function (data) {
-                
-                // Update Modal Content From Response
-                $("#matchName").text(data.name);
-                $("#matchImg").attr("src", data.photo).attr("style", "max-width: 300px");
+                console.log(userInput);
 
-                // Display Modal
-                $("#matchModal").modal("show");
-            });
+                $.post("/api/friends", userInput).then(function (data) {
+
+                    // Update Modal Content From Response
+                    $("#matchName").text(data.name);
+                    $("#matchImg").attr("src", data.photo).attr("style", "max-width: 300px");
+
+                    // Display Modal
+                    $("#matchModal").modal("show");
+                });
+            } else {
+                alert("Make sure all fields are filled out!");
+            }
         });
 
     </script>
