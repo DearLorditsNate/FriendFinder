@@ -31,13 +31,11 @@
         <hr>
 
         <!-- Radio Button Questions -->
-        <h2>Use the scale below to select your anwers with 1 being Strongly Disagree and 5 being Strongly Agree</h2>
-
             <form>
                 <!-- Question 1 -->
                 <h3>Question 1</h3>
                 <h4>You like hiking.</h4>
-                    <select class="custom-select" id = "q1">
+                    <select class="custom-select mb-4" id = "q1">
                         <option selected>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
@@ -49,7 +47,7 @@
                 <!-- Question 2 -->
                 <h3>Question 2</h3>
                 <h4>You like eating.</h4>
-                    <select class="custom-select" id="q2">
+                    <select class="custom-select mb-4" id="q2">
                         <option selected>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
@@ -61,7 +59,7 @@
                 <!-- Question 3 -->
                 <h3>Question 3</h3>
                 <h4>You like eating.</h4>
-                    <select class="custom-select" id="q3">
+                    <select class="custom-select mb-4" id="q3">
                         <option selected>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
@@ -73,7 +71,7 @@
                 <!-- Question 4 -->
                 <h3>Question 4</h3>
                 <h4>You like eating.</h4>
-                    <select class="custom-select" id="q4">
+                    <select class="custom-select mb-4" id="q4">
                         <option selected>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
@@ -85,7 +83,7 @@
                 <!-- Question 5 -->
                 <h3>Question 5</h3>
                 <h4>You like eating.</h4>
-                    <select class="custom-select" id="q5">
+                    <select class="custom-select mb-4" id="q5">
                         <option selected>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
@@ -97,7 +95,7 @@
                 <!-- Question 6 -->
                 <h3>Question 6</h3>
                 <h4>You like eating.</h4>
-                    <select class="custom-select" id="q6">
+                    <select class="custom-select mb-4" id="q6">
                         <option selected>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
@@ -109,7 +107,7 @@
                 <!-- Question 7 -->
                 <h3>Question 7</h3>
                 <h4>You like eating.</h4>
-                    <select class="custom-select" id="q7">
+                    <select class="custom-select mb-4" id="q7">
                         <option selected>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
@@ -121,7 +119,7 @@
                 <!-- Question 8 -->
                 <h3>Question 8</h3>
                 <h4>You like eating.</h4>
-                    <select class="custom-select" id="q8">
+                    <select class="custom-select mb-4" id="q8">
                         <option selected>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
@@ -133,7 +131,7 @@
                 <!-- Question 9 -->
                 <h3>Question 9</h3>
                 <h4>You like eating.</h4>
-                    <select class="custom-select" id="q9">
+                    <select class="custom-select mb-4" id="q9">
                         <option selected>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
@@ -145,7 +143,7 @@
                 <!-- Question 10 -->
                 <h3>Question 10</h3>
                 <h4>You like eating.</h4>
-                    <select class="custom-select" id="q10">
+                    <select class="custom-select mb-4" id="q10">
                         <option selected>Select an option</option>
                         <option value="1">One (Strongly disagree)</option>
                         <option value="2">Two</option>
@@ -155,11 +153,17 @@
                     </select>
 
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle"
+            <button type="submit" class="btn btn-primary btn-lg btn-block mt-4" id="submit"><i class="fa fa-check-circle"
                     aria-hidden="true"></i> Submit</button>
             </form>
 
-
+    <div class="container">
+        <footer>
+            <p>
+                <a href="#">API Friends List</a>
+            </p>
+        </footer>
+    </div>
 
 
     </div>
@@ -183,26 +187,9 @@
     <script>
         $("#submit").on("click", function() {
             event.preventDefault();
+            
             var input1 = $("#q1").val();
-            var input2 = $("#q2").val();
-            var input3 = $("#q3").val();
-            var input4 = $("#q4").val();
-            var input5 = $("#q5").val();
-            var input6 = $("#q6").val();
-            var input7 = $("#q7").val();
-            var input8 = $("#q8").val();
-            var input9 = $("#q9").val();
-            var input10 = $("#q10").val();
-            console.log(input1);
-            console.log(input2);
-            console.log(input3);
-            console.log(input4);
-            console.log(input5);
-            console.log(input6);
-            console.log(input7);
-            console.log(input8);
-            console.log(input9);
-            console.log(input10);
+
         });
 
     </script>
