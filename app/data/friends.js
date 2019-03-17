@@ -4,14 +4,14 @@ var friendsArr = [
         photo: "https://screenrant.com/wp-content/uploads/young-han-solo-star-wars-movie-casting.jpg",
         scores: [
             1,
-            2,
-            3,
-            4,
-            5,
             1,
+            5,
+            5,
+            5,
+            5,
             2,
             3,
-            4,
+            5,
             5
         ]
     },
@@ -19,16 +19,16 @@ var friendsArr = [
         name: "Jar Jar Binks",
         photo: "https://pbs.twimg.com/profile_images/440228605231366144/VNuY_cmB_400x400.jpeg",
         scores: [
+            5,
+            5,
+            1,
+            1,
+            3,
+            2,
             4,
-            4,
-            4,
-            4,
-            4,
-            4,
-            4,
-            4,
-            4,
-            4
+            1,
+            2,
+            3
         ]
     }
 ];
