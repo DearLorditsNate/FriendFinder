@@ -27,27 +27,29 @@ module.exports = function(app) {
             });
 
             scores.push(ints.reduce(sum));
-
-
-            // if (Math.abs(req.body.scores.reduce(sum) - friends[i].scores.reduce(sum)) ) {
-            //     bestMatch = friends[i].scores.reduce(sum);
-            // }
         }
 
-        function findMatch() {
-            for (var i = 0; i < scores.length; i++) {
-                // If scores are equal, then return that match
-                if (Math.abs(req.body.scores.reduce(sum) - scores[i]) === 0) {
-                    bestMatch = friends[i];
-                // Else, find the lowest number difference and return that match
-                } else {
-
+        function findMatch(currentScore) {
+            var result;
+            var max = 50;
+            var current;
+            for (var i = 0; i < scores.length - 1; i++) {
+                current = Math.abs(scores[i] - currentScore);
+                if (current < max) {
+                    max = current;
+                    result = i;
                 }
             }
+            return result;
         }
 
-        console.log(friends);
-        console.log(scores);
+        var currentScore = req.body.scores.toString().split(',').map(function (item) {
+            return parseInt(item, 10);
+        });
+
+        if (friends.length > 1) {
+            bestMatch = friends[findMatch(currentScore.reduce(sum))];
+        }
 
         res.json(bestMatch);
     });
