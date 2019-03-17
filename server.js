@@ -20,6 +20,7 @@ Route Handlers
 =============================
 */
 
+require("./app/routing/htmlRoutes")(app);
 
 
 /*
