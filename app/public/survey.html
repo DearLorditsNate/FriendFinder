@@ -169,6 +169,8 @@
                     aria-hidden="true"></i> Submit</button>
             </form>
 
+    </div>
+
     <div class="container">
         <footer>
             <p>
@@ -177,7 +179,25 @@
         </footer>
     </div>
 
-
+    <!-- Modal -->
+    <div class="modal fade" id="matchModal" tabindex="-1" role="dialog" aria-labelledby="matchModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="matchModalLabel">Here's your new friend!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- JS -->
@@ -206,6 +226,7 @@
 
             $.post("/api/friends", userInput).then(function (data) {
                 console.log("successful post");
+                $("#matchModal").modal("show");
             });
         });
 
